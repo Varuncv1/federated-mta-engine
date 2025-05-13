@@ -2,7 +2,7 @@
 
 This repository demonstrates a privacy-preserving, federated approach to multi-touch attribution (MTA) modeling—enabling multiple data partners to collaboratively train a shared attribution model without exposing raw user data.
 
-## 🚀 Project Structure
+## Project Structure
 
 ```
 federated_mta/
@@ -27,7 +27,7 @@ federated_mta/
 └── README.md               # This file
 ```
 
-## 🔧 Environment Setup
+## Environment Setup
 
 1. **Clone the repo**:
 
@@ -49,7 +49,7 @@ federated_mta/
 
    *Expected packages:* `pandas`, `numpy`, `torch`, `scikit-learn`, `joblib`, `flower` (optional), `opacus` (optional).
 
-## 🗂️ Data Simulation
+## Data Simulation
 
 Generate synthetic impression & conversion logs for three partners:
 
@@ -59,7 +59,7 @@ python data/simulate_partners.py
 
 Outputs: `data/partner_a.csv`, `partner_b.csv`, `partner_c.csv`.
 
-## 📈 Attribution Heuristics
+## Attribution Heuristics
 
 Compute per-user credit using:
 
@@ -88,7 +88,7 @@ python models/local_model.py --partner partner_c
 
 Locally saved models: `models/local/{partner}_model.pth` and `{partner}_scaler.pkl`.
 
-## 🌐 Federated Learning Loop
+## Federated Learning Loop
 
 Aggregate local models into a global model:
 
@@ -98,7 +98,7 @@ python models/federated_trainer.py
 
 Saves `models/global/global_model.pth` and prints global test accuracy on combined data.
 
-## 📊 Evaluation & Analysis
+## Evaluation & Analysis
 
 Open the Jupyter notebook to compute metrics and visualize results:
 
@@ -114,7 +114,7 @@ jupyter notebook evaluation/notebooks/results_analysis.ipynb
 4. **Visualization**: Plot performance comparison (local vs. federated vs. centralized) and attribution quality.
 5. **Privacy Trade-off**: (Optional) Analyze model accuracy under DP noise.
 
-## 🔐 Differential Privacy Experiments *(Optional)*
+## Differential Privacy Experiments
 
 To add privacy noise during federated updates, integrate **Opacus** in your training clients:
 
